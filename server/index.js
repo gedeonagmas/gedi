@@ -15,7 +15,7 @@ const mongodb = require("./config/db");
 
 app.use(cors(
     {
-        origin: ["https://deploy-mern-frontend.vercel.app"],
+        origin: ["https://gedi-client.vercel.app"],
         methods: ["POST", "GET","PATCH","DELETE","PUT"],
         credentials: true
     }
