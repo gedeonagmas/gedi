@@ -16,14 +16,16 @@ const mongodb = require("./config/db");
 app.use(cors(
     {
         origin: ["https://deploy-mern-frontend.vercel.app"],
-        methods: ["POST", "GET","PUSH","DELETE","PUT"],
+        methods: ["POST", "GET","PATCH","DELETE","PUT"],
         credentials: true
     }
 ));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/gym/app/v1",router);
-
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
 app.all("*", (req, res, next) => {
   res.status(200).json({ message: `${req.originalUrl} is invalid url` });
   next();
@@ -31,9 +33,7 @@ app.all("*", (req, res, next) => {
 
 app.use(errorController);
 
-app.get("/", (req, res) => {
-    res.json("Hello");
-})
+
 
 mongodb()
   .then(() => {
