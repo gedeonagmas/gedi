@@ -8,7 +8,7 @@ const { errorController } = require("./controller/errorController");
 const mongodb = require("./config/db");
 
 // process.on("uncaughtException", (err) => {
-//   console.log("SHUTTING DOWN"); 
+//   console.log("SHUTTING DOWN "); 
 //   console.log(err.name, err.message);
 //   process.exit(1);
 // });
