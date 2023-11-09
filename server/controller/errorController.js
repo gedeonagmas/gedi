@@ -29,7 +29,8 @@ const prodError = (err, res) => {
   } else {
     res.status(500).json({
       status: "error",
-      message: "something went wrong!",
+      message: "something went wrong please refresh the page!",
+      error:err,
     });
   }
 };
