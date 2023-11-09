@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const apiSlice = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://gedi.vercel.app/gym/app/v1", //this will be render api url + /gym/app/v1
+    baseUrl:"http://localhost:5000/gym/app/v1"
+    // baseUrl: "https://gedi.vercel.app/gym/app/v1", //this will be render api url + /gym/app/v1
   }),
   tagTypes: [
     "profile-info",
