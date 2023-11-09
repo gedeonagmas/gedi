@@ -30,6 +30,7 @@ const prodError = (err, res) => {
     res.status(500).json({
       status: "error",
       message: "something went wrong!",
+      error:err,
     });
   }
 };
