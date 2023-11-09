@@ -17,7 +17,6 @@ const Error = (props) => {
           </p>
         );
       })}
-<div className="underline text-[14px] font-bold text-red-600">{props?.test}</div>
       <Close
         fontSize="large"
         onClick={() => props.setError(false)}
