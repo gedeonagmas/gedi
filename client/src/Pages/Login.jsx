@@ -68,7 +68,7 @@ function Login() {
 
         {/* form  */}
         <div className="page-padding py-[10rem] flex justify-center">
-          {error && errorMessage &&test&& (
+          {error && errorMessage && (
             <Error message={errorMessage} setError={setError} />
           )}
           <div className="flex flex-col py-40 px-20 bg-black w-[55rem] min450:w-full  shadow-xl">
