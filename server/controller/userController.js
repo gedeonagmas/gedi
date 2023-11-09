@@ -4,7 +4,7 @@ const { User } = require("./../models/signupModel");
 const { tokenGenerator } = require("../utils/tokenGenerator");
 const crypto = require("crypto");
 const { Class } = require("../models/classModel");
-// const { upload } = require("./../utils/upload");
+const { upload } = require("./../utils/upload");
 const cloudinary = require("./../config/cloudinary");
 
 exports.signupHandler = asyncCatch(async (req, res, next) => {
