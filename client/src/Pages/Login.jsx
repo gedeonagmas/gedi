@@ -21,6 +21,7 @@ function Login() {
 
   // need a refresh
   useEffect(() => {
+    console.log(loginResponse,'login response');
     loginResponse.status === "fulfilled"
       ? (setError(false),
         localStorage.setItem(
