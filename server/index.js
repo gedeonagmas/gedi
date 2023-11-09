@@ -13,8 +13,14 @@ const mongodb = require("./config/db");
 //   process.exit(1);
 // });
 
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET","PUSH","DELETE","PUT"],
+        credentials: true
+    }
+));
 app.use(express.json());
-app.use(cors());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/gym/app/v1",router);
 
@@ -25,10 +31,9 @@ app.all("*", (req, res, next) => {
 
 app.use(errorController);
 
-app.use(express.static(path.join(__dirname, "./client/dist")));
-app.get("*", (req, res, next) => {
-  res.sendFile(path.join(__dirname, "./client/dist/index.html"));
-});
+app.get("/", (req, res) => {
+    res.json("Hello");
+})
 
 mongodb()
   .then(() => {
