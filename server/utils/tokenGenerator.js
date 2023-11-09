@@ -5,13 +5,13 @@ exports.tokenGenerator = (res, id) => {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
-  const cookieOption = {
-    expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
-    ),
-    httpOnly: true,
-    //secure:true     only for production
-  };
-  res.cookie("jwt", token, cookieOption);
+  // const cookieOption = {
+  //   expires: new Date(
+  //     Date.now() + process.env.COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
+  //   ),
+  //   httpOnly: true,
+  //   //secure:true     only for production
+  // };
+  // res.cookie("jwt", token, cookieOption);
   return token;
 };
