@@ -4,7 +4,7 @@ const { size } = require("../utils/size");
 const { Class } = require("../models/classModel");
 const { User } = require("../models/signupModel");
 const { Transaction } = require("../models/transactionModel");
-// const { upload } = require("./../utils/upload");
+const { upload } = require("./../utils/upload");
 const cloudinary = require("./../config/cloudinary");
 
 exports.create = (model, image) =>
