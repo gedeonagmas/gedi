@@ -27,11 +27,9 @@ const prodError = (err, res) => {
       .status(err.statusCode)
       .json({ status: err.status, message: err.message });
   } else {
-    console.log(err);
     res.status(500).json({
       status: "error",
       message: "something went wrong!",
-      error:err,
     });
   }
 };
