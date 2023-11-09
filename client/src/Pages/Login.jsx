@@ -14,7 +14,6 @@ function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [passVisibility, setPassVisibility] = useState(true);
-  const [test,setTest]=useState('');
 
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -41,7 +40,7 @@ function Login() {
       : null;
 
     loginResponse.status === "rejected"
-      ? (setError(true),setTest(loginResponse?.error?.data?.err), setErrorMessage(loginResponse?.error?.data?.message))
+      ? (setError(true), setErrorMessage(loginResponse?.error?.data?.message))
       : setError(false);
 
     loginResponse.status === "pending" ? setPending(true) : setPending(false);
@@ -70,7 +69,7 @@ function Login() {
         {/* form  */}
         <div className="page-padding py-[10rem] flex justify-center">
           {error && errorMessage &&test&& (
-            <Error test={test} message={errorMessage} setError={setError} />
+            <Error message={errorMessage} setError={setError} />
           )}
           <div className="flex flex-col py-40 px-20 bg-black w-[55rem] min450:w-full  shadow-xl">
             <label className="text-[2rem] text-white mb-3 font-medium ">
