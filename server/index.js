@@ -7,11 +7,11 @@ const router = require("./routes/routes");
 const { errorController } = require("./controller/errorController");
 const mongodb = require("./config/db");
 
-// process.on("uncaughtException", (err) => {
-//   console.log("SHUTTING DOWN "); 
-//   console.log(err.name, err.message);
-//   process.exit(1);
-// });
+process.on("uncaughtException", (err) => {
+  console.log("SHUTTING DOWN "); 
+  console.log(err.name, err.message);
+  process.exit(1);
+});
 
 app.use(cors(
     {
@@ -21,7 +21,6 @@ app.use(cors(
     }
 ));
 app.use(express.json());
-// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/gym/app/v1",router);
 app.get("/", (req, res) => {
     res.json("Hello");
@@ -47,10 +46,10 @@ mongodb()
     process.exit(1);
   });
 
-// process.on("unhandledRejection", (err) => {
-//   console.log("SHUTTING DOWN");
-//   console.log(err.message, err.name);
-//   server.close(() => {
-//     process.exit(1);
-//   });
-// });
+process.on("unhandledRejection", (err) => {
+  console.log("SHUTTING DOWN");
+  console.log(err.message, err.name);
+  server.close(() => {
+    process.exit(1);
+  });
+});
