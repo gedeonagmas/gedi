@@ -15,7 +15,7 @@ const mongodb = require("./config/db");
 
 app.use(cors(
     {
-        origin: ["https://gedi-client.vercel.app"],
+        origin: ["https://gym-app-client.vercel.app"],
         methods: ["POST", "GET","PATCH","DELETE","PUT"],
         credentials: true
     }
